@@ -1,9 +1,15 @@
 import React from "react"
 
-const Square = () => {
+const Square = ({ square, index, handleGameplay }) => {
+
+  const handleClick = () => {
+    handleGameplay(index)
+  }
   return (
     <>
-      <div className="square"></div>
+      <div className="square" onClick={handleClick} key={index}>
+        {square}
+      </div>
     </>
   )
 }
