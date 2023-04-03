@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import "./App.css"
+import Square from "./components/Square.js"
 
 const App = () => {
   const [board, setBoard] = useState([
@@ -17,8 +18,16 @@ const App = () => {
   return (
     <>
       <h1>Treasure Hunt Game</h1>
+      <div className="board">
+        {
+          board.map(square => {
+            return < Square square={square}/>
+          })
+        }
+      </div>   
     </>
   )
 }
+
 
 export default App
